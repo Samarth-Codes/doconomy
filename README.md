@@ -2,22 +2,43 @@
 
 Doconomy API Ruby Client v2.1.3
 
+Åland Index is an index for CO2 emission calculations for payments and financial transactions.
+
+## Instalation
+
+```ruby
+gem install doconomy
+```
+
 ## Configuration
 
 ```ruby
   Doconomy::Api.configuration do |configuration|
     configuration.environment = :sandbox
     configuration.api_version = 'v2.1'
-    configuration.api_key = ENV['DOCONOMY_X_API_KEY']
-    configuration.client_id = ENV['DOCONOMY_CLIENT_ID']
-    configuration.digital_signature_private_key = ENV['DOCONOMY_DIGITAL_SIGNATURE_PRIVATE_KEY']
-    configuration.digital_signature_certificate_serial_number = ENV['DOCONOMY_DIGITAL_SIGNATURE_CERTIFICATE_SERIAL_NUMBER']
-    configuration.digital_signature_certificate = ENV['DOCONOMY_DIGITAL_SIGNATURE_CERTIFICATE']
-    configuration.pem = File.read(ENV['DOCONOMY_PEM_FILE'])
+    configuration.api_key = ENV['X_API_KEY']
+    configuration.client_id = ENV['CLIENT_ID']
+    configuration.digital_signature_private_key = ENV['DIGITAL_SIGNATURE_PRIVATE_KEY']
+    configuration.digital_signature_certificate_serial_number = ENV['DIGITAL_SIGNATURE_CERTIFICATE_SERIAL_NUMBER']
+    configuration.digital_signature_certificate = ENV['DIGITAL_SIGNATURE_CERTIFICATE']
+    configuration.pem = File.read(ENV['PEM_FILE'])
   end
+ 
+  Doconomy::Api::Calculation.create(payload)
+
 ```
 
-## Create a token
+Current token is stored in
+
+```ruby
+Doconomy::Api.current_token
+```
+
+and it is automatically refreshed base on the `expires_in` attribute.
+
+## Create a token manually
+
+If you would like to create an token manually just call `Doconomy::Api::Token.create()`
 
 ```ruby
   token = Doconomy::Api::Token.create
@@ -97,6 +118,7 @@ Doconomy API Ruby Client v2.1.3
 
 ## Copyright
 
-Copyright (c) 2022 Łukasz Śliwa. See LICENSE.txt for
-further details.
+Copyright (c) 2022 [Łukasz Śliwa](http://lukaszsliwa.com). 
+
+See LICENSE.txt for further details.
 
