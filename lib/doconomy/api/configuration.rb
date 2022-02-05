@@ -5,6 +5,7 @@ module Doconomy
     class Configuration < Base
       PRODUCTION_URL = 'https://doconomy-api.crosskey.io'
       SANDBOX_URL = 'https://doconomy-api-sandbox.crosskey.io'
+      SCOPE = 'urn:aland-index:calculations,urn:aland-index:calculations:water-use'
 
       attr_accessor :url,
                     :environment,
@@ -74,7 +75,7 @@ module Doconomy
           {
             environment: :production,
             api_version: Doconomy::Api::VERSION,
-            scope: 'urn:aland-index:calculations,urn:aland-index:calculations:water-use',
+            scope: Doconomy::Api::Configuration::SCOPE,
             pem_password: nil
           }
         end
