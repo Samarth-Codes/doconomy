@@ -39,6 +39,7 @@ Doconomy::Api.configuration do |configuration|
   configuration.digital_signature_certificate_serial_number = ENV['DIGITAL_SIGNATURE_CERTIFICATE_SERIAL_NUMBER']
   configuration.digital_signature_certificate = ENV['DIGITAL_SIGNATURE_CERTIFICATE']
   configuration.pem = File.read(ENV['PEM_FILE'])
+  # configuration.pem_password = nil
 end
 
 Doconomy::Api::Calculation.create(payload)
