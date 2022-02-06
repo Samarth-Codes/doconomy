@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/doconomy.svg)](https://badge.fury.io/rb/doconomy)
+
 # Doconomy API Ruby Client
 
 Doconomy API Ruby Client
