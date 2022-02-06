@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/doconomy.svg)](https://badge.fury.io/rb/doconomy)
+[![Coverage Status](https://coveralls.io/repos/lukaszsliwa/doconomy/badge.svg)](https://coveralls.io/r/lukaszsliwa/doconomy)
 
 # Doconomy API Ruby Client
 
