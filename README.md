@@ -1,20 +1,27 @@
-# Doconomy API v2.1.3 Ruby Client
+# Doconomy API Ruby Client
 
-Doconomy API Ruby Client v2.1.3
+Doconomy API Ruby Client
 
 Åland Index is an index for CO2 emission calculations for payments and financial transactions.
 
 ## Instalation
 
+Run
+
 ```shell
 $ gem install doconomy
 ```
 
-or
+or add new gem to the `Gemfile`
 
 ```ruby
-# Gemfile
 gem 'doconomy'
+```
+
+and run
+
+```shell
+$ bundle install
 ```
 
 ## Generate PEM file
@@ -42,6 +49,7 @@ Doconomy::Api.configuration do |configuration|
   # configuration.pem_password = nil
 end
 
+payload = { cardTransactions: [ ... ] }
 Doconomy::Api::Calculation.create(payload)
 
 ```
@@ -75,7 +83,7 @@ transactions = [
   { reference: 3, mcc: 5735, amount: { value: 50.20, currency: 'CHF' } }
 ]
 payload = {
-  card_transactions: transactions
+  cardTransactions: transactions
 }
 
 transactions = Doconomy::Api::Calculation.create(payload)

@@ -18,28 +18,22 @@ module Doconomy
         @category_id = attributes[:category_id]
         @carbon_emission_in_grams = attributes[:carbon_emission_in_grams]
         @carbon_emission_in_ounces = attributes[:carbon_emission_in_ounces]
-        if attributes[:carbon_social_cost]
-          @carbon_social_cost = OpenStruct.new(attributes[:carbon_social_cost])
-        end
+        @carbon_social_cost = OpenStruct.new(attributes[:carbon_social_cost]) if attributes[:carbon_social_cost]
         @water_use_in_cubic_meters = attributes[:water_use_in_cubic_meters]
         @water_use_in_gallons = attributes[:water_use_in_gallons]
-        if attributes[:water_use_social_cost]
-          @water_use_social_cost = OpenStruct.new(attributes[:water_use_social_cost])
-        end
+        @water_use_social_cost = OpenStruct.new(attributes[:water_use_social_cost]) if attributes[:water_use_social_cost]
       end
 
       class << self
         # Create the calculations
         #
+        # @option payload [Hash]   ({})   Payload
+        # @option headers [Hash]   ({ 'Content-Type' => 'application/json' }) Custom headers
+        #
         # @return [Array<Doconomy::Api::Calculation>]
         #
         def create(payload = {})
-          payload.deep_transform_keys! do |key|
-            items = key.to_s.camelize.split('')
-            items[0].downcase!
-            items.join
-          end
-          response = client.post("/aland-index/#{Doconomy::Api.configuration.api_version}/calculations", payload)
+          response = client.post("/aland-index/#{Doconomy::Api.configuration.api_version}/calculations", payload.to_json)
           response[:transaction_footprints].map { |attributes| new(attributes) }
         end
       end

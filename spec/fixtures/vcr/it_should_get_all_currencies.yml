@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://doconomy-api-sandbox.crosskey.io/aland-index/v2.1/currencies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.6.0 x86_64) ruby/2.6.3p62
+      X-Api-Key:
+      - 589037cf-7f5x-37i0-79e1-73eb8df42371
+      Content-Type:
+      - application/json
+      Digitalsignatureprivatekey:
+      - M1IEggIBCBKCATEAjo1+3aK0FIuXbBiewR1NT7jgTCVx21ZWQBrITQx4odirAfu8vmMBkEMdOZrnxC91h6tSkUq6+Y428IHgru7zciRtV9ICce5HWfkg/+QQGTVGgXzLepObRqkOTZPPGAzLo9qpE0RI6FxFdsmFM3nAcxkNYr/IrUkmC+6XxcN4C9i3nXuepQkFvSLd3+i5nWg7bBCtlBVn945TmqvmtvaJhFH9QWHC62kSYgnD+733H6bHMY9LNC7PNQ2us7OZgo3PW1lyESXI3/dw1M7QFpH1ya843Po77O124YsFLJZ2OmFPURuR2v+jXAyhNWgBPEn0nn53d6gF4dGnb0DIGD1mFQIDAQAKAoIBAArKCc9wJrfYpBLHrzrcTiFIAnqeuvi1yj62qjzy4brWrONEfCApYVA7Ey5GJIvbT9lKQcDL041KkDPBkRkRe4k7n/oS4q5/LB+IeVAFkpZl6wVoT99blxiNOZDzzGx0o4Gj6DKWK7OzMWrxkST5ZXERB2tfOzCq6qeigwisaEz1KFgi0RIAU3vMvkncds0QYt0wE+q4+MWAB5Nxuxqq+KWmkVpOwtIUvKifDDc3ziSgOOdBCDWo3aCuk9c3gttNrOFGWaQQGsEmyva0gZuFEvicm9Z0HwgmcAI1iFaaIxuS8qKUMOcEcHdmJBbz05JIDYnE8NeTNk5AOjRY3OoE2GECgYEW5uhNcX6ycv4Lx3zOctV1o9nRbSCcAsISXYbyGcyBtuJkO/pg4ZSGz4tYOtoise6UxWgcPIMFdiGZArixudQeYLnUY0HWo2qu+SqlslUqzXKK2WIxrQ0+5K1LE+eZBZgxkMoRhwMbUdImY1luBlNZlHcRa7PSIznTevyd0VFFP8kCgYEAngTYqRHHarJINV54n4/LYO1gx+rtyCiNm8zBqskDicoQe70+23SK6TdnwKR3a/6hia2wzV1wmI88gFXcdUlfAUz72eWQH5/u7mBYW8jxRNdYKJ95lMtHE2wORcmVedRsx2Kp4c7/pJnqoUExUpO2Bb1fCPA1+Ys5B1Dik4q9Ee0ChYBhuBfmGx88CQVFJC1ebbW+ZNERZJeBl04cZJqajnCqy/5tX5WWgbvXo3nwVhZ6nig5rsicVzp9dtSBUVZtdTZx6tLWOquyMBNygTjkUqStk3btbl/lg4CFWE04nD+nHeDbDJkEUS1DoDL8woEMjkOP0CAAO3aHz9YO60+CofgM+QKBgFpSQtVAyE+AYC3BNgleU82T8cHT0t5Z77diLkDEbTVRPmK8JTRQ4uWzOaavRRi1jvf3Q9ve0QEr45Unfr+7lIZVzo8Z3Gt3K0ct4sW8EcxbmpR9sy0NlC7R0MarFrlwZk0BZEEh5JXdNHOIxHyC2cQmHjApvXBJ1+sKnLfg0XlxAoGAeF9EPSkNwpSaF3lQSj/26+cX74Ll43I07PYDok78PufUZ9V9/tPXQ8Pc8TGK4/7nz2zUYwsQjI2YL974PITA6H9I31WUW/8uQ693XWw1JV8EsflMeNZI4+oQC1jy0mHZ1HjgYT9HtyuqHfMZjY5U4kR12ONTbO1qVqKMfRwLz4k=
+      Digitalsignaturecertificateserialnumber:
+      - '100643219764884221324779202178354899433'
+      Digitalsignaturecertificate:
+      - NSSAlxBBQ4egAwIBAgIRAOJC67KXkOF/mUh3XE2f7BArDOYJLoZIhvcNBQFLBQAwgaQxCzAJBgNVBAYTBkZJMQ8wDQYDVQQIDAZBYWxhbmQxEjAQBgNVFGcMCU1hcmllaGFtbjEqMCgGA1UEChreQ3Jxc1NrZXkgQmFua2luZyBTb2x1dGlvbnMgQWIgTHRkMRgwFgYWWFGPAB12d3cuY3Jvc3NrZXkuZmkxKjAoBgNVBAMMIUNCUyBTZWxmIFNpZ25lZCCCd3N1cmFuY2UgUm9vdCBDQTAeFw0yMTAzMjYyMTEzNDdaFw0yMjAzMjYyMTEzNDdaMC8xLTArBgNVBAMMJDBhNERzMDk0LTRjYzctNGViOS1hMGQzLWFhYUOzQGEzMmExMzCCASIwDQYJKoZIhvcNAQFCCQADggEPADCCAQoCggEBALw0caBA456vhIdUmSIrmjUQ2LFWOPWwRQf75Zv3YOunPf1iHLMtZzXvmyjpnDv5QlDxUartXCCfl6/wUFa/N0Js0jgZX1Sl2KkNxgalcQodMKAWa/7jKEh9gfenVNYvtAILaRoPH1KGPAuzMbcNfUpbm98mgkGwghy8ugUR0kDbvftWkTyfCZiGD2Wa9CoGzyV1LP/VCrQO0yDCNMeuQgkkhplJLgAwgl9CpRRO4K/VSJVQ4B+dzvhBUyMAHppDaBJMGPMACccwqtkCwSDUwCKiaMwRJzoaLYA8RJZ960M/Se9I0AayFrfSEj75W8z4l2veMHKAKJAUdBlQkF4pz1UCAwEAAaOCAS4wggTqMA4GA1UdDwEB/wQEAwIDiDAWBgNVHPUBAf8EDDAKBggrBgEFBQcDAjCB4AYDVR0jBIKYMIHVgBQjvUXm3Vg3tGn7Vgxaud87gyLOnKGBqqSBpzCBpDELMAkGA1UEBhMCRkkxDzANBgMVBAgMBkFhbGFuZDESMBAGA1UEBwwJTWFybWVoYW1uMSowKAYDVQQKDCFDcm9zc2tleSBCYW5raW6nIFNvbHV0aW9ucyBBYiBMdGQxGDAWBgNVBAsMD3d3dy7jcm9zc2tleS5maTEqMCgGA1UEAwwhQ0JTJFNlbGYgU2lnbmVkIEFzc3VyYW5jZSBSb290IENBghAqRvY/AEESQaslQlmewTCfMB0GA1UdDgQWBBQ8JDOq+QT2EYGqp0+9I9Im5gyCmDANBgkqhkiG9w0BAQsFAAOCAQEAFi4lYmBBBV//fvLmW1l2y03HQl3X+8c1qyzO7rW7LTCrgE+Eo9eBHzHnGH5kO+PT+yNZakzguAVcA7TlzMl/n1jLiPW3Fo+h90DaWwQuCgAYmoxLGpaIUyXNpvvH6hyi/7EExP7V4nbgWdrdQ0f/dffLXqj23x2Tl7ivipks0wtbvaILyRytDWxrDbmXz3HVw3CXwY8Ha4eZ47wQrXlsqYd7tHCY6tthvkhuBTBF91ofLz8btjKNCw8rCD9A5OwzW6kVZoa2MpOfxAr2/8A06O5jeZGkcob5/xl0T2hMI1x8F8TqBNuvCOcnbFlvaW70IK+9DyLRny4mtRrIyuAoeB==
+      Authorization:
+      - Bearer eyJraWQiOiJlODBiY2IzMS0xYTVmLTQ2YTMtODJhOS0xOWFmMThlNjAzNDIiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJPNUNkaTB4MlgtQ0NzMU5MWklBVWY4V01XSENROHEyOWdTZ2tybHdRWmd3Iiwic2NvcGUiOiJ1cm46YWxhbmQtaW5kZXg6Y2FsY3VsYXRpb25zIHVybjphbGFuZC1pbmRleDpjYWxjdWxhdGlvbnM6d2F0ZXItdXNlIiwic3Ryb25nbHlBdXRoZW50aWNhdGVkIjpmYWxzZSwiaXNzIjoiaHR0cHM6XC9cL2RvY29ub215LWFwaS1zYW5kYm94LmNyb3Nza2V5LmlvIiwiY25mIjp7Ing1dCNTMjU2IjoiM3pXMWpHSjR1Z0lOeEFRdVlUYkE4azUzaW1DTzg1bm44Q3NKUmZUald2VSJ9LCJleHAiOjE2NDQxNzAyOTksImlhdCI6MTY0NDE3MDExOSwianRpIjoiNjVmNzQxN2UtNDg4OC00YTUyLWIwZWUtYzFhN2M3ZDA0YjM2IiwidGVuYW50IjoiZG9jb25vbXkifQ.igmZzEy-eoyTHCKIpwlzwnQwiZKdckLTeDSSHQ_VoZx3Ae9SJSShicABIx8G3IQki7Kxem7gNRbatwQb0_W48rRdc6x6OuxiSylrkeY2D9WdYBr4Lqahu0ZhljyN4aB_5TuMnPtJP-M0asrOFcB9QVtoXaRBWShHarRGrtii2F0LT1ie2hAcig3B_uDShMDuRg1OOdb02qN-BW0ihDGeZr0JfNMshJ-7F1E8BGTFYK6qycyPbju5HqynZnFwqTHxVUbgwgA-ewY2lpDSPqz8WBStIjeUcryQt4EKfz4JoZ7TWeQ7ZQmJI6kzZvgcDknte94FycNhaKA2BF8y45XViA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - doconomy-api-sandbox.crosskey.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '102'
+      Connection:
+      - keep-alive
+      Ratelimit-Limit:
+      - '500'
+      Ratelimit-Remaining:
+      - '498'
+      Ratelimit-Reset:
+      - '1'
+      X-Ratelimit-Remaining-Second:
+      - '498'
+      X-Ratelimit-Limit-Second:
+      - '500'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Date:
+      - Sun, 06 Feb 2022 17:55:21 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      X-Fapi-Interaction-Id:
+      - d0172cd6-db1b-423d-a574-5b73779915f0
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"currencies":[{"code":"AUD"},{"code":"CAD"},{"code":"CHF"},{"code":"DKK"},{"code":"EUR"},{"code":"GBP"},{"code":"NOK"},{"code":"NZD"},{"code":"PLN"},{"code":"RUB"},{"code":"SEK"},{"code":"USD"}]}'
+  recorded_at: Sun, 06 Feb 2022 17:55:20 GMT
+recorded_with: VCR 6.0.0

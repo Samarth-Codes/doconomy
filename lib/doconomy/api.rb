@@ -17,12 +17,24 @@ module Doconomy
     class << self
       # Configure Doconomy API
       #
+      # @param [Doconomy::Api::Configuration] (default)
+      #
       # @return [Doconomy::Api::Configuration]
       #
-      def configuration
-        @configuration ||= Doconomy::Api::Configuration.default
+      def configuration(configuration = Doconomy::Api::Configuration.default)
+        @configuration ||= configuration
         yield(@configuration) if block_given?
         @configuration
+      end
+
+      # Sets new configuration Doconomy API
+      #
+      # @param [Doconomy::Api::Configuration]
+      #
+      # @return [Doconomy::Api::Configuration]
+      #
+      def configuration=(configuration)
+        @configuration = configuration
       end
 
       # Returns current token object. Refresh automatically if the token has been expired.
@@ -34,6 +46,14 @@ module Doconomy
           @current_token = Doconomy::Api::Token.create
         end
         @current_token
+      end
+
+      # Sets current token object.
+      #
+      # @return [Doconomy::Api::Token]
+      #
+      def current_token=(token)
+        @current_token = token
       end
     end
   end

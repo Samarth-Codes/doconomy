@@ -12,6 +12,8 @@ module Doconomy
         @token_type = attributes[:token_type]
         @expires_in = attributes[:expires_in]
         @expires_at = Time.current + @expires_in.to_i if @expires_in
+        @error_description = attributes[:error_description]
+        @error = attributes[:error]
       end
 
       # Returns true if token has been expired
@@ -43,7 +45,7 @@ module Doconomy
             scope: scope,
             client_id: Doconomy::Api.configuration.client_id
           }
-          new(client.post('/oidc/v1.0/token', payload, {}, with_authorization: false))
+          new(client.post('/oidc/v1.0/token', payload, { 'Content-Type' => 'application/x-www-form-urlencoded' }, with_authorization: false))
         end
       end
     end

@@ -44,6 +44,14 @@ module Doconomy
         production? ? PRODUCTION_URL : SANDBOX_URL
       end
 
+      # Return the scope
+      #
+      # @return [String]
+      #
+      def scope
+        @scope.is_a?(Array) ? @scope.join(',') : @scope
+      end
+
       # Returns true if the configuration environment is `production'
       #
       # @return [Boolean]

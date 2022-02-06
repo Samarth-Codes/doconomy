@@ -8,12 +8,8 @@ module Doconomy
       def initialize(attributes = {})
         @attributes = attributes
         @id = attributes[:id]
-        if attributes[:main_category]
-          @main_category = OpenStruct.new(attributes[:main_category])
-        end
-        if attributes[:sub_category]
-          @sub_category = OpenStruct.new(attributes[:sub_category])
-        end
+        @main_category = OpenStruct.new(attributes[:main_category]) if attributes[:main_category]
+        @sub_category = OpenStruct.new(attributes[:sub_category]) if attributes[:sub_category]
       end
 
       class << self
