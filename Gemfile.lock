@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doconomy (2.1.3.1)
+    doconomy (2.1.3.2)
       activesupport (>= 4.0)
       rake (>= 13.0)
       rest-client (>= 2.1.0)
