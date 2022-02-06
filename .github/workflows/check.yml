@@ -23,7 +23,7 @@ jobs:
       - name: Decrypt PEM file
         env:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
-        run: echo "$PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 -d doconomy.pem.gpg > certificates/doconomy.pem
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output certificates/doconomy.pem doconomy.pem.gpg
       - run: bundle exec rspec spec/
       - uses: coverallsapp/github-action@1.1.3
         with:
