@@ -12,6 +12,7 @@ module Doconomy
                     :api_key,
                     :api_version,
                     :client_id,
+                    :client_secret,
                     :scope,
                     :digital_signature_private_key,
                     :digital_signature_certificate_serial_number,
@@ -26,6 +27,7 @@ module Doconomy
         @api_key = attributes[:api_key]
         @api_version = attributes[:api_version]
         @client_id = attributes[:client_id]
+        @client_secret = attributes[:client_secret]
         @scope = attributes[:scope]
         @digital_signature_private_key = attributes[:digital_signature_private_key]
         @digital_signature_certificate_serial_number = attributes[:digital_signature_certificate_serial_number]

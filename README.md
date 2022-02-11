@@ -45,6 +45,7 @@ Doconomy::Api.configuration do |configuration|
   configuration.api_version = 'v2.1'
   configuration.api_key = ENV['X_API_KEY']
   configuration.client_id = ENV['CLIENT_ID']
+  # configuration.client_secret = ENV['CLIENT_SECRET']
   configuration.scope = ENV['SCOPE']
   configuration.digital_signature_private_key = ENV['DIGITAL_SIGNATURE_PRIVATE_KEY']
   configuration.digital_signature_certificate_serial_number = ENV['DIGITAL_SIGNATURE_CERTIFICATE_SERIAL_NUMBER']

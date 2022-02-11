@@ -43,7 +43,8 @@ module Doconomy
           payload = {
             grant_type: 'client_credentials',
             scope: scope,
-            client_id: Doconomy::Api.configuration.client_id
+            client_id: Doconomy::Api.configuration.client_id,
+            client_secret: Doconomy::Api.configuration.client_secret
           }
           new(client.post('/oidc/v1.0/token', payload, { 'Content-Type' => 'application/x-www-form-urlencoded' }, with_authorization: false))
         end
