@@ -42,6 +42,7 @@ $ openssl pkcs12 -in certificate.p12 -nodes -out certificate.pem
 
 Doconomy::Api.configuration do |configuration|
   configuration.environment = :sandbox # or :production
+  # configuration.url = 'https://services-sandbox.doconomy.com' 
   configuration.api_version = 'v2.1'
   configuration.api_key = ENV['X_API_KEY']
   configuration.client_id = ENV['CLIENT_ID']
@@ -91,10 +92,13 @@ payload = {
   cardTransactions: transactions
 }
 
-transactions = Doconomy::Api::Calculation.create(payload)
-transactions.each do |transaction|
+calculation = Doconomy::Api::Calculation.create(payload)
+calculation.transactions.each do |transaction|
   puts transaction.reference
   puts transaction.category_id
+  puts transaction.mcc
+  puts transaction.amount.value
+  puts transaction.amount.currency
   # `carbon_*` attributes are set if scope includes 
   # urn:aland-index:calculations
   puts transaction.carbon_emission_in_grams
