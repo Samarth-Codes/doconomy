@@ -93,6 +93,11 @@ payload = {
 }
 
 calculation = Doconomy::Api::Calculation.create(payload)
+
+# if calculation.errors.present?
+#  return false
+# end
+
 calculation.transactions.each do |transaction|
   puts transaction.reference
   puts transaction.category_id
