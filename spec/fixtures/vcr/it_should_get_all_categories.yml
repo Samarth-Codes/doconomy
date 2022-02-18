@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://doconomy-api-sandbox.crosskey.io/aland-index/v2.1/categories
+    uri: https://services-sandbox.doconomy.com/aland-index/v2.1/categories
     body:
       encoding: US-ASCII
       string: ''

@@ -3,8 +3,8 @@
 module Doconomy
   module Api
     class Configuration < Base
-      PRODUCTION_URL = 'https://doconomy-api.crosskey.io'
-      SANDBOX_URL = 'https://doconomy-api-sandbox.crosskey.io'
+      PRODUCTION_URL = 'https://services.doconomy.com'
+      SANDBOX_URL = 'https://services-sandbox.doconomy.com'
       SCOPE = 'urn:aland-index:calculations,urn:aland-index:calculations:water-use'
 
       attr_accessor :url,
@@ -21,19 +21,19 @@ module Doconomy
                     :pem_password
 
       def initialize(attributes = {})
-        @attributes = attributes
-        @url = attributes[:url]
-        @environment = attributes[:environment]
-        @api_key = attributes[:api_key]
-        @api_version = attributes[:api_version]
-        @client_id = attributes[:client_id]
-        @client_secret = attributes[:client_secret]
-        @scope = attributes[:scope]
-        @digital_signature_private_key = attributes[:digital_signature_private_key]
-        @digital_signature_certificate_serial_number = attributes[:digital_signature_certificate_serial_number]
-        @digital_signature_certificate = attributes[:digital_signature_certificate]
-        @pem = attributes[:pem]
-        @pem_password = attributes[:pem_password]
+        @attributes = attributes.deep_symbolize_keys
+        @url = @attributes[:url]
+        @environment = @attributes[:environment]
+        @api_key = @attributes[:api_key]
+        @api_version = @attributes[:api_version]
+        @client_id = @attributes[:client_id]
+        @client_secret = @attributes[:client_secret]
+        @scope = @attributes[:scope]
+        @digital_signature_private_key = @attributes[:digital_signature_private_key]
+        @digital_signature_certificate_serial_number = @attributes[:digital_signature_certificate_serial_number]
+        @digital_signature_certificate = @attributes[:digital_signature_certificate]
+        @pem = @attributes[:pem]
+        @pem_password = @attributes[:pem_password]
       end
 
       # Return the server URL

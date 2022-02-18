@@ -6,14 +6,14 @@ module Doconomy
       attr_reader :access_token, :scope, :token_type, :expires_in, :expires_at, :error_description, :error
 
       def initialize(attributes = {})
-        @attributes = attributes
-        @access_token = attributes[:access_token]
-        @scope = attributes[:scope]
-        @token_type = attributes[:token_type]
-        @expires_in = attributes[:expires_in]
+        @attributes = attributes.deep_symbolize_keys
+        @access_token = @attributes[:access_token]
+        @scope = @attributes[:scope]
+        @token_type = @attributes[:token_type]
+        @expires_in = @attributes[:expires_in]
         @expires_at = Time.current + @expires_in.to_i if @expires_in
-        @error_description = attributes[:error_description]
-        @error = attributes[:error]
+        @error_description = @attributes[:error_description]
+        @error = @attributes[:error]
       end
 
       # Returns true if token has been expired

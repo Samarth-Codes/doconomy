@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://doconomy-api-sandbox.crosskey.io/oidc/v1.0/token
+    uri: https://services-sandbox.doconomy.com/oidc/v1.0/token
     body:
       encoding: UTF-8
       string: grant_type=client_credentials&scope=urn%3Aaland-index%3Acalculations%2Curn%3Aaland-index%3Acalculations%3Awater-use&client_id=o1C4i0x1x-66x2DuZIAUf9KmwhCt8q19gSgkrlwPUgp

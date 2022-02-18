@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://doconomy-api-sandbox.crosskey.io/oidc/v1.0/token
+    uri: https://services-sandbox.doconomy.com/oidc/v1.0/token
     body:
       encoding: UTF-8
       string: grant_type=client_credentials&scope=urn%3Aaland-index%3Acalculations%2Curn%3Aaland-index%3Acalculations%3Awater-use&client_id=o1C4i0x1x-66x2DuZIAUf9KmwhCt8q19gSgkrlwPUgp
@@ -69,7 +69,7 @@ http_interactions:
   recorded_at: Sun, 06 Feb 2022 17:55:19 GMT
 - request:
     method: post
-    uri: https://doconomy-api-sandbox.crosskey.io/aland-index/v2.1/calculations
+    uri: https://services-sandbox.doconomy.com/aland-index/v2.1/calculations
     body:
       encoding: UTF-8
       string: '{"cardTransactions":[{"reference":"transaction-1","mcc":4899,"amount":{"value":100.1,"currency":"USD"}},{"reference":"transaction-2","mcc":4899,"amount":{"value":10.1,"currency":"EUR"}},{"reference":"transaction-3","mcc":5735,"amount":{"value":50.2,"currency":"CHF"}}]}'

@@ -3,25 +3,13 @@
 module Doconomy
   module Api
     class Calculation < Base
-      attr_accessor :reference,
-                    :category_id,
-                    :carbon_emission_in_grams,
-                    :carbon_emission_in_ounces,
-                    :carbon_social_cost,
-                    :water_use_in_cubic_meters,
-                    :water_use_in_gallons,
-                    :water_use_social_cost
+      attr_accessor :transactions
 
       def initialize(attributes = {})
-        @attributes = attributes
-        @reference = attributes[:reference]
-        @category_id = attributes[:category_id]
-        @carbon_emission_in_grams = attributes[:carbon_emission_in_grams]
-        @carbon_emission_in_ounces = attributes[:carbon_emission_in_ounces]
-        @carbon_social_cost = OpenStruct.new(attributes[:carbon_social_cost]) if attributes[:carbon_social_cost]
-        @water_use_in_cubic_meters = attributes[:water_use_in_cubic_meters]
-        @water_use_in_gallons = attributes[:water_use_in_gallons]
-        @water_use_social_cost = OpenStruct.new(attributes[:water_use_social_cost]) if attributes[:water_use_social_cost]
+        @attributes = attributes.deep_symbolize_keys
+        @transactions = @attributes[:transactions].map do |attrs|
+          attrs.is_a?(Hash) ? Transaction.new(attrs) : attrs
+        end if @attributes[:transactions]
       end
 
       class << self
@@ -33,8 +21,19 @@ module Doconomy
         # @return [Array<Doconomy::Api::Calculation>]
         #
         def create(payload = {})
+          payload.deep_symbolize_keys!
           response = client.post("/aland-index/#{Doconomy::Api.configuration.api_version}/calculations", payload.to_json)
-          response[:transaction_footprints].map { |attributes| new(attributes) }
+
+          transactions_attributes = {}
+          payload[:cardTransactions].each do |item|
+            transactions_attributes[item[:reference]] = item.symbolize_keys
+          end
+          response[:transaction_footprints].each do |item|
+            transactions_attributes[item[:reference]] ||= {}
+            transactions_attributes[item[:reference]].merge!(item.symbolize_keys)
+          end
+
+          new(transactions: transactions_attributes.values, errors: response[:errors])
         end
       end
     end

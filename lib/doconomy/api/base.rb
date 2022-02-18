@@ -5,6 +5,12 @@ module Doconomy
     class Base
       attr_accessor :attributes
 
+      def errors
+        @errors = attributes[:errors].map do |attrs|
+          attrs.is_a?(Hash) ? Doconomy::Api::Error.new(attrs) : attrs
+        end if attributes[:errors]
+      end
+
       class << self
         def client
           @client ||= Doconomy::Api::Client.new

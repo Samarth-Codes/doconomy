@@ -6,8 +6,8 @@ module Doconomy
       attr_accessor :code
 
       def initialize(attributes = {})
-        @attributes = attributes
-        @code = attributes[:code]
+        @attributes = attributes.deep_symbolize_keys
+        @code = @attributes[:code]
       end
 
       class << self

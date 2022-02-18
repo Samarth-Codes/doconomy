@@ -5,6 +5,8 @@ module Doconomy
     VERSION = 'v2.1'
 
     autoload :Base, 'doconomy/api/base.rb'
+    autoload :Error, 'doconomy/api/error.rb'
+    autoload :Transaction, 'doconomy/api/transaction.rb'
     autoload :Calculation, 'doconomy/api/calculation.rb'
     autoload :Category, 'doconomy/api/category.rb'
     autoload :Client, 'doconomy/api/client.rb'

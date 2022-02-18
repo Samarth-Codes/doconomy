@@ -6,10 +6,10 @@ module Doconomy
       attr_accessor :id, :main_category, :sub_category
 
       def initialize(attributes = {})
-        @attributes = attributes
-        @id = attributes[:id]
-        @main_category = OpenStruct.new(attributes[:main_category]) if attributes[:main_category]
-        @sub_category = OpenStruct.new(attributes[:sub_category]) if attributes[:sub_category]
+        @attributes = attributes.deep_symbolize_keys
+        @id = @attributes[:id]
+        @main_category = OpenStruct.new(@attributes[:main_category]) if @attributes[:main_category]
+        @sub_category = OpenStruct.new(@attributes[:sub_category]) if @attributes[:sub_category]
       end
 
       class << self
