@@ -99,7 +99,7 @@ module Doconomy
           payload: payload,
           ssl_client_cert: ssl_client_cert,
           ssl_client_key: ssl_client_key
-        }
+        }.reject { |_, value| value.nil? }
       end
 
       def headers_without_authorization
@@ -109,7 +109,7 @@ module Doconomy
           'digitalSignaturePrivateKey' => Doconomy::Api.configuration.digital_signature_private_key,
           'digitalSignatureCertificateSerialNumber' => Doconomy::Api.configuration.digital_signature_certificate_serial_number,
           'digitalSignatureCertificate' => Doconomy::Api.configuration.digital_signature_certificate
-        }
+        }.reject { |_, value| value.nil? }
       end
 
       def headers_with_authorization(options = {})
